@@ -1,4 +1,4 @@
-# 백트래킹으로 구현 - 비효율적인듯
+# 백트래킹으로 구현 - 시간복잡도 줄일 필요 있음
 def calc_ans():
     temp_arr = []
     for i in range(len(answer)):
@@ -22,17 +22,17 @@ def choose(curr_num, cnt):
 
     return
 
-whole_num = int(input())
-for w in range(whole_num):
+T = int(input())
+for test_case in range(T):
     n, m = map(int, input().split())
     arr = list(map(int, input().split()))
     if m == len(arr):
-        print(f'#{w}', max(arr)-min(arr))
+        print(f'#{test_case}', max(arr)-min(arr))
         continue
     answer = []
     dif_arr = []
     choose(1, 0)
-    print(f'#{w}', min(dif_arr))
+    print(f'#{test_case}', min(dif_arr))
 
 
 
