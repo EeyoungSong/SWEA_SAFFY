@@ -1,4 +1,5 @@
-# 백트래킹으로 구현 - 시간복잡도 줄일 필요 있음
+# 백트래킹 조합으로 구현 - 시간복잡도 줄일 필요 있음
+'''
 def calc_ans():
     temp_arr = []
     for i in range(len(answer)):
@@ -33,6 +34,25 @@ for test_case in range(T):
     dif_arr = []
     choose(1, 0)
     print(f'#{test_case}', min(dif_arr))
+
+'''
+import sys
+
+T = int(input())
+for test_case in range(T):
+    n, m = map(int, input().split())
+    arr = list(map(int, input().split()))
+    arr.sort()
+    ans = sys.maxsize
+    for i in range(len(arr)-m+1):
+        t = arr[i+m-1] - arr[i]
+        ans = min(ans, t)
+    print(ans)
+
+
+        
+
+
 
 
 
